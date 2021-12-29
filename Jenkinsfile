@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install -g serve'
+                sh 'npm install'
                 sh 'npm run build'
             }
         }
@@ -16,7 +16,7 @@ pipeline {
         } 
         stage('Deploy') {
             steps {
-                sh 'serve -s build'
+                sh 'npm start'
             }
         } 
     }
